@@ -45,7 +45,13 @@ export class WelcomeComponent implements OnInit {
               this.isNotificationPermissionGranted = false;
             }
           }
+        }).catch(() => {
+          this.isLoadingFinished = true;
+          this.isNotificationPermissionGranted = false;
         });
+    } else {
+      this.isLoadingFinished = true;
+      this.isNotificationPermissionGranted = false;
     }
   }
 
